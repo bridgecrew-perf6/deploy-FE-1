@@ -1,4 +1,3 @@
-
 import Chat from '../components/complain/Chat';
 import React, { useContext, useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
@@ -79,7 +78,7 @@ export default function Complain() {
   };
 
   useEffect(() => {
-    socket = io('http://localhost:5000', {
+    socket = io('https://dumbmerch-server.herokuapp.com/api/v1' || 'http://localhost:5000', {
       auth: {
         token: localStorage.getItem('token'), // we must set options to get access to socket server
       },
