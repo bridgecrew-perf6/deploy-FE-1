@@ -85,7 +85,7 @@ export default function Complain() {
       query: {
         id: state.user.id,
       },
-    });
+    }); 
 
     socket.on('new message', () => {
       console.log('contact', contact);
