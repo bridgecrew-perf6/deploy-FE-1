@@ -82,24 +82,22 @@ export default function ComplainAdmin() {
 
   // code here
   const loadMessages = (value) => {
-    socket.on('customers contact', (data) => {
-      socket.on('messages', (data) => {
-        if (data.length > 0) {
-          const dataMessages = data.map((item) => ({
-            idSender: item.sender.id,
-            message: item.message,
-          }));
-          console.log(dataMessages);
-          setMessages(dataMessages);
-        } else {
-          const dataMessages = null;
-          console.log('Data Messages', dataMessages);
-          setMessages(dataMessages);
-        }
-        loadContacts();
-        const chatMessages = document.getElementById('chat-messages');
-        chatMessages.scrollTop = chatMessages?.scrollHeight;
-      });
+    socket.on('messages', (data) => {
+      if (data.length > 0) {
+        const dataMessages = data.map((item) => ({
+          idSender: item.sender.id,
+          message: item.message,
+        }));
+        console.log(dataMessages);
+        setMessages(dataMessages);
+      } else {
+        const dataMessages = null;
+        console.log('Data Messages', dataMessages);
+        setMessages(dataMessages);
+      }
+      loadContacts();
+      const chatMessages = document.getElementById('chat-messages');
+      chatMessages.scrollTop = chatMessages?.scrollHeight;
     });
   };
 
