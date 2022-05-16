@@ -78,14 +78,14 @@ export default function Complain() {
   };
 
   useEffect(() => {
-    socket = io('https://dumbmerch-server.herokuapp.com/api/v1', {
+    socket = io('https://dumbmerch-server.herokuapp.com', {
       auth: {
         token: localStorage.getItem('token'), // we must set options to get access to socket server
       },
       query: {
         id: state.user.id,
       },
-    }); 
+    });
 
     socket.on('new message', () => {
       console.log('contact', contact);
