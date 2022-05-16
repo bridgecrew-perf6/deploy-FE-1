@@ -78,7 +78,7 @@ export default function Complain() {
   };
 
   useEffect(() => {
-    socket = io('https://dumbmerch-server.herokuapp.com/api/v1' || 'http://localhost:5000', {
+    socket = io('https://dumbmerch-server.herokuapp.com/api/v1', {
       auth: {
         token: localStorage.getItem('token'), // we must set options to get access to socket server
       },
