@@ -7,7 +7,7 @@ export default function ProductCard({ item }) {
   return (
     <Link to={`/product/` + item.id} style={{ textDecoration: 'none' }}>
       <div className="card-product" style={{ width: '200px', padding: '10px' }}>
-        <img src={item.image} className=" img-rounded" alt={item.name} style={{ height: '210px', width: '200px' }} />
+        <img src={item.image} className=" img-rounded" alt={item.name} style={{ height: '210px', width: 'auto' }} />
         <div className="p-2">
           <div className="text-header-product-item">{item.name}</div>
           <div className="text-product-item">{convertRupiah.convert(item.price)}</div>
